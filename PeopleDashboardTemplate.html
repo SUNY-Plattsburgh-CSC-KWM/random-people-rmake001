@@ -2,26 +2,75 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>JQuerySample</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/d3js/7.8.5/d3.min.js"></script>
-<script src="PeopleDashboardTemplate.js"></script>
-<!-- https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l -->
-<!-- https://medium.com/@brajagopal.tripathi/how-to-change-the-text-color-on-a-mouseover-in-html-697f4d4210fa -->
+<title>People Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
 <style>
-
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff0f5;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: #ff69b4;
+}
+.my-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 90%;
+    margin: 20px auto;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.my-table th, .my-table td {
+    text-align: left;
+    padding: 12px;
+}
+.my-table th {
+    background-color: #ffc0cb;
+    color: white;
+}
+.my-table tr:nth-child(even) {
+    background-color: #ffe4e1;
+}
+.my-table tr:hover {
+    background-color: #ffd1dc;
+    cursor: pointer;
+}
+.my-table td[title] {
+    position: relative;
+}
+.my-table td[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    left: 100%;
+    margin-left: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="dashboard.js" defer></script>
+</head>
 <body>
-	<table class="my-table" id="people"> 
-		<tr>
-		<th>Name</th>
-		<th>Address</th>
-		<th>City</th>
-		<th>State</th>
-		<th>Zip</th>
-		<th>Latitude</th>
-		<th>Longitude</th>
-		</tr>
-	</table>
+<h2>People Dashboard</h2>
+<table class="my-table" id="people"> 
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+</table>
 </body>
 </html>
